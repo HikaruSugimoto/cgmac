@@ -14,9 +14,9 @@ These measures are particularly useful for
 - Predicting glucose control abilities including insulin sensitivity, insulin secretion, and insulin clearance
 - Prediction of diabetic complications
 
-## Lag Parameter Selection
+## Lag parameter selection
 
-### Default Recommendations
+### Default recommendations
 For a typical CGM analysis, we recommend the following lag settings based on sampling interval:
 - 5-minute sampling interval: lag = 30 (covers 150 minutes)
 - 15-minute sampling interval: lag = 10 (covers 150 minutes)
