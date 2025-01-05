@@ -14,6 +14,28 @@ These measures are particularly useful for
 - Predicting glucose control abilities including insulin sensitivity, insulin secretion, and insulin clearance
 - Prediction of diabetic complications
 
+## Lag Parameter Selection
+
+### Default Recommendations
+For a typical CGM analysis, we recommend the following lag settings based on sampling interval:
+- 5-minute sampling interval: lag = 30 (covers 150 minutes)
+- 15-minute sampling interval: lag = 10 (covers 150 minutes)
+
+These recommendations are based on capturing temporal correlations over a 150-minute window, which often provides meaningful insights into glucose dynamics.
+The lag parameter is fully customisable as optimal lag values may vary depending on your research objectives.
+
+Examples of use with different sampling intervals:
+```python
+# For 5-minute interval data
+results_5min = cgmac(data=cgm_data_5min, lag=30)
+
+# For 15-minute interval data
+results_15min = cgmac(data=cgm_data_15min, lag=10)
+
+# Custom lag for specific research needs
+results_custom = cgmac(data=cgm_data, lag=your_custom_lag)
+```
+
 ## Prerequisites
 
 Required Python libraries:
@@ -24,7 +46,7 @@ Required Python libraries:
 ## Input data format
 
 The input DataFrame should be structured as follows
-- First column: Subject IDs
+- First column: Individuals IDs
 - Second column onwards: Glucose readings (time series data)
 - Each row represents a different individual's CGM readings.
 
@@ -33,4 +55,5 @@ Example input data structure:
   ID  Reading1 Reading2 Reading3 ...
 0 1  120 125 118 ...
 1 2  115 118 121 ...
+```
 
