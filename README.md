@@ -1,6 +1,6 @@
 # CGMac (CGM Metrics Calculator)
 ## Overview
-This code calculates key metrics from Continuous Glucose Monitoring (CGM) data for multiple individuals. It processes time series glucose data and calculates various statistical measures including mean glucose levels, standard deviation and temporal autocorrelation properties.
+This code calculates measures derived from continuous glucose monitoring (CGM) of multiple individuals. It processes time series glucose data and calculates various statistical measures including mean glucose levels, standard deviation and temporal autocorrelation properties.
 
 ## Function description
 
@@ -26,14 +26,15 @@ The lag parameter is fully customisable as optimal lag values may vary depending
 
 Examples of use with different sampling intervals:
 ```python
+import cgmac
 # For 5-minute interval data
-results_5min = cgmac(data=cgm_data_5min, lag=30)
+results_5min = cgmac.cgmac(data=cgm_data_5min, lag=30)
 
 # For 15-minute interval data
-results_15min = cgmac(data=cgm_data_15min, lag=10)
+results_15min = cgmac.cgmac(data=cgm_data_15min, lag=10)
 
 # Custom lag for specific research needs
-results_custom = cgmac(data=cgm_data, lag=your_custom_lag)
+results_custom = cgmac.cgmac(data=cgm_data, lag=your_custom_lag)
 ```
 
 ## Prerequisites
